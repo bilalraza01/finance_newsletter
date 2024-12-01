@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { TextField, Button, Select, MenuItem, FormControl, InputLabel, Typography, Box, Divider, Grid } from '@mui/material';
+import { CircularProgress, TextField, Button, Select, MenuItem, FormControl, InputLabel, Typography, Box, Divider, Grid, Alert } from '@mui/material';
 import axios from 'axios';
 import { Heading } from './ContentPage';
 
 const ContactForm = () => {
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("success"); // Can be "success" or "error"
+  const [isLoading, setIsLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -35,15 +39,36 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     if (!validateFields()) return;
 
     try {
-      const response = await axios.post('https://kit-api-endpoint.com/submit', formData);
-      console.log('Form submitted successfully:', response.data);
-      alert('Form submitted successfully!');
+      const dataForKit = {
+        "email_address": formData.email,
+        "fields[first_name]": formData.firstName,
+        "fields[last_name]": formData.lastName,
+        "fields[how_can_we_help]": formData.dropdown,
+        "fields[subject]": formData.subject,
+        "fields[your_message]": formData.message,
+      }
+      const response = await axios.post(
+        `https://app.kit.com/forms/7421312/subscriptions`,
+        dataForKit,
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded", // Ensure the data is sent correctly
+          },
+        }
+      );
+      if (response.status === 200) {
+        setMessage("Form submitted successfully!");
+        setMessageType("success");
+      }
     } catch (error) {
-      console.error('Error submitting the form:', error);
-      alert('Failed to submit the form.');
+      setMessage("Error submitting form. Please try again later.");
+      setMessageType("error");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -68,6 +93,7 @@ const ContactForm = () => {
       />
       <Divider sx={{ mb: 3 }} />
       <form onSubmit={handleSubmit} style={{ paddingTop: "10px" }}>
+        {message && <Alert severity={messageType} sx={{marginBottom: "20px"}}>{message}</Alert>}
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Box sx={{ mb: 2 }}>
@@ -115,7 +141,6 @@ const ContactForm = () => {
               name="dropdown"
               value={formData.dropdown}
               onChange={handleChange}
-              required
             >
               <MenuItem value="">- Select -</MenuItem>
               <MenuItem value="Need support with your Briefs?">
@@ -156,8 +181,8 @@ const ContactForm = () => {
             helperText={errors.message}
           />
         </Box>
-        <Button type="submit" variant="contained" color="primary" fullWidth>
-          Submit Form
+        <Button disabled={isLoading} type="submit" variant="contained" color="primary" fullWidth>
+          {isLoading ? <CircularProgress size={24} sx={{ color: "white" }} /> : "Submit Form"}
         </Button>
       </form>
     </Box>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, List, ListItem } from '@mui/material';
+import { Box, List, ListItem, Typography } from '@mui/material';
 import { styled, useTheme } from '@mui/system';
 import { WrapperContainer } from './WrapperContainer';
 import { MainButton } from './MainButton';
 import {slide as Menu} from 'react-burger-menu';
+import logoImg from '../assets/images/logo.png';
 
 const MenuLink = styled(Link)(({ theme }) => ({
   textDecoration: "none",
@@ -43,9 +44,29 @@ export const Navbar = () => {
           {/* logo */}
           <Link
             to="/"
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              marginRight: "30px",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <img src="https://briefs.co/wp-content/uploads/2022/12/Briefs-Media-2.png" alt="logo" height="35px" />
+            <Box><img src={logoImg} alt="logo" height="35px" /></Box>
+            <Typography
+              sx={{
+                fontFamily: theme.typography.fontFamily,
+                fontSize: "20px",
+                color: theme.common.black,
+                marginLeft: "10px",
+                letterSpacing: "-0.7px",
+                display: {xs: "none", sm: "block"},
+              }}
+            >
+              The Trends
+            </Typography>
           </Link>
+            
           {/* Navigation */}
           <Box
             sx={{
@@ -71,7 +92,7 @@ export const Navbar = () => {
               >
                 About Us
               </Link>
-              <MainButton text="Join Market Briefs" />
+              <MainButton text="Join The Trends" />
             </Box>
             <Box
               sx={{ display: {xs: "block", md: "none"} }}
@@ -83,34 +104,12 @@ export const Navbar = () => {
               <span></span>
             </Box>
           </Box>
-          {/* <List>
-            <ListItem>
-              <Link to="/">Home</Link>
-            </ListItem>
-            <ListItem>
-              <Link to="/about">Boost Your Grades</Link>
-            </ListItem>
-            <ListItem>
-              <Link to="/advertise">Advertise</Link>
-            </ListItem>
-            <ListItem>
-              <Link to="/contact">Contact</Link>
-            </ListItem>
-            <ListItem>
-              <Link to="/faq">FAQ</Link>
-            </ListItem>
-            <ListItem>
-              <Link to="/privacy">Privacy</Link>
-            </ListItem>
-            <ListItem>
-              <Link to="/terms">Terms</Link>
-            </ListItem>
-          </List> */}
         </Box>
       </WrapperContainer>
       <Menu
         left
         isOpen={drawerOpen}
+        onClose={() => handleBurgerToggle()}
         onStateChange={({isOpen}) => setDrawerOpen(isOpen)}
         customBurgerIcon={false}
         customCrossIcon={false}
@@ -149,7 +148,7 @@ export const Navbar = () => {
       >
         <Box>
           <MenuLink to="/" className="menu-item" onClick={() => handleBurgerToggle()}>Home</MenuLink>
-          <MenuLink to="/about" className="menu-item" onClick={() => handleBurgerToggle()}>Boost Your Grades</MenuLink>
+          <MenuLink to="/about" className="menu-item" onClick={() => handleBurgerToggle()}>About Us</MenuLink>
           <MenuLink to="/advertise" className="menu-item" onClick={() => handleBurgerToggle()}>Advertise</MenuLink>
           <MenuLink to="/contact" className="menu-item" onClick={() => handleBurgerToggle()}>Contact</MenuLink>
           <MenuLink to="/faq" className="menu-item" onClick={() => handleBurgerToggle()}>FAQ</MenuLink>

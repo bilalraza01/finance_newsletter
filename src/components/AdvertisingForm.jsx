@@ -1,13 +1,28 @@
 import React, { useState } from "react";
-import { TextField, MenuItem, Select, Button, FormControl, InputLabel, Checkbox, ListItemText } from "@mui/material";
+import { 
+  CircularProgress,
+  TextField,
+  Alert,
+  MenuItem,
+  Select,
+  Button,
+  FormControl,
+  InputLabel,
+  Checkbox,
+  ListItemText
+} from "@mui/material";
 import axios from "axios";
 import { useTheme } from "@mui/material";
 
 const AdvertisingForm = () => {
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("success"); // Can be "success" or "error"
+  const [isLoading, setIsLoading] = useState(false);
   const theme = useTheme();
 
   const [formData, setFormData] = useState({
     firstName: "",
+    lastName: "",
     email: "",
     jobTitle: "",
     company: "",
@@ -34,10 +49,40 @@ const AdvertisingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://your-api-endpoint.com/form-submit", formData);
-      console.log("Form submitted successfully:", response.data);
+      const dataForKit = {
+        email_address: formData.email,
+        "fields[first_name]": formData.firstName,
+        "fields[last_name]": formData.lastName,
+        "fields[your_job_title]": formData.jobTitle,
+        "fields[company]": formData.company,
+        "fields[industry]": formData.industry,
+        "fields[how_did_you_hear_about_us]": formData.hearAboutUs,
+        "fields[target_audience]": formData.targetAudience,
+        "fields[any_additional_details]": formData.additionalDetails,
+        "fields[when_are_you_looking_to_advertise]": formData.advertiseWhen,
+        "fields[website]": formData.website,
+        "fields[budget]": formData.budget,
+        "fields[are_you_working_on_behalf_of_an_agency]": formData.isAgency,
+        "fields[what_are_your_advertising_goals]": formData.advertisingGoals,
+      }
+      const response = await axios.post(
+        `https://app.kit.com/forms/7421329/subscriptions`,
+        dataForKit,
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded", // Ensure the data is sent correctly
+          },
+        }
+      );
+      if (response.status === 200) {
+        setMessage("Form submitted successfully!");
+        setMessageType("success");
+      }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      setMessage("Error submitting form. Please try again later.");
+      setMessageType("error");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -47,10 +92,20 @@ const AdvertisingForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      {message && <Alert severity={messageType} sx={{marginBottom: "20px"}}>{message}</Alert>}
       <TextField
         label="First Name"
         name="firstName"
         value={formData.firstName}
+        onChange={handleChange}
+        fullWidth
+        margin="normal"
+      />
+
+      <TextField
+        label="Last Name"
+        name="lastName"
+        value={formData.lastName}
         onChange={handleChange}
         fullWidth
         margin="normal"
@@ -209,7 +264,7 @@ const AdvertisingForm = () => {
           },
         }}
       >
-        Submit Form
+        {isLoading ? <CircularProgress size={24} sx={{ color: "white" }} /> : "Submit Form"}
       </Button>
     </form>
   );

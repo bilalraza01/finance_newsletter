@@ -2,16 +2,47 @@ import React, { useState } from 'react';
 import { WrapperContainer } from '../components/WrapperContainer';
 import { fontWeight, letterSpacing, lineHeight, padding, textAlign, useTheme } from '@mui/system';
 import { Heading } from '../components/ContentPage';
-import { Grid, Box, Input, Button, Typography } from '@mui/material';
+import axios from 'axios';
+import { Grid, Box, Input, Button, Typography, Alert, CircularProgress } from '@mui/material';
 
 export const Home = () => {
   const theme = useTheme();
-
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("success"); // Can be "success" or "error"
+  const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
 
   const handleChange = (event) => {
     setEmail(event.target.value); // Update state with the input value
   };
+
+  const handleClick = async (e) => {
+    if (!email) {
+      setMessage("Please enter a valid email address.");
+      setMessageType("error");
+      return;
+    }
+    try {
+      const response = await axios.post(
+        `https://app.kit.com/forms/7421354/subscriptions`,
+        {email_address: email},
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded", // Ensure the data is sent correctly
+          },
+        }
+      );
+      if (response.status === 200) {
+        setMessage("You have successfully subscribed to the Trends!");
+        setMessageType("success");
+      }
+    } catch (error) {
+      setMessage("Error subscribing. Please try again later.");
+      setMessageType("error");
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   return(
     <>
@@ -20,7 +51,7 @@ export const Home = () => {
           <Grid item xs={12} md={6}>
             <Box sx={{width: {xs: "100%", md: "90%"}}}>
               <Heading
-                text="Market Briefs: The free financial newsletter for regular investors"
+                text="The Trends: Your guide to modern investing and finance"
                 sx={{
                   textAlign: "left",
                   fontSize: {xs: "28px", sm: "36px", md: "40px"},
@@ -28,7 +59,7 @@ export const Home = () => {
                 }}
               />
               <Heading
-                text="We keep it brief, sign up for Market Briefs today!"
+                text="We simplify complex financial topics—sign up for The Trends today!"
                 sx={{
                   textAlign: "left",
                   fontSize: {xs: "18px", sm: "22px"},
@@ -36,6 +67,7 @@ export const Home = () => {
                   lineHeight: "1.5",
                 }}
               />
+              {message && <Alert severity={messageType} sx={{marginBottom: "20px"}}>{message}</Alert>}
               <Box
                 sx={{
                   width: "100%",
@@ -45,10 +77,12 @@ export const Home = () => {
                   display: "flex",
                   justifyContent: "space-between",
                   flexDirection: {xs: "column", md: "row"},
+                  marginBottom: "20px",
                   border: {xs: "none", md: `3px solid ${theme.primary.main}`},
                 }}
               >
                 <input
+                  onChange={handleChange}
                   className='email-input'
                   placeholder="Email Address"
                   style={{
@@ -64,6 +98,8 @@ export const Home = () => {
                   }}
                 />
                 <Button
+                  onClick={() => handleClick()}
+                  disabled={isLoading}
                   sx={{
                     textTransform: "none !important",
                     height: "100%",
@@ -83,7 +119,7 @@ export const Home = () => {
                     }
                   }}
                 >
-                  Join Free
+                  { isLoading ? <CircularProgress size={24} sx={{ color: "white" }} /> : "Join Free" }
                 </Button>
               </Box>
             </Box>
@@ -93,11 +129,20 @@ export const Home = () => {
               sx={{
                 width: {xs: "350px", md: "340px"},
                 maxWidth: "80%",
+                minHeight: "400px",
                 position: "relative",
-                top: "5px",
               }}
             >
-              <img src="https://briefs.gumlet.io/wp-content/uploads/2022/01/MarketBriefs-Email.png?compress=true&quality=80&w=576&dpr=1" width="100%" />
+              <img
+                style={{
+                  // display: "block",
+                  // marginTop: "auto",
+                  position: "absolute",
+                  bottom: "0",
+                }}
+                alt='The Trends'
+                src="https://briefs.gumlet.io/wp-content/uploads/2022/01/MarketBriefs-Email.png?compress=true&quality=80&w=576&dpr=1" width="100%"
+              />
             </Box>
           </Grid>
         </Grid>
@@ -105,7 +150,7 @@ export const Home = () => {
       <WrapperContainer bgcolor={theme.primary.main} outerSx={{paddingY: "40px", position: "relative", zIndex: "5"}}>
         <Heading
           type="h2"
-          text="Read LESS News, 100,000s Of Investors"
+          text="Stay Ahead, Stay Modern"
           sx={{
             textAlign: "center",
             fontSize: {xs: "28px", sm: "36px", md: "44px"},
@@ -124,7 +169,7 @@ export const Home = () => {
             color: "rgba(255, 255, 255, 0.8)",
           }}
         >
-          start their mornings with Market Briefs. You should too.
+          Join thousands of readers who stay informed with The Trends, delivered twice a week. Get insights into modern investing, digital currencies, and emerging financial trends.
         </Typography>
       </WrapperContainer>
     </>

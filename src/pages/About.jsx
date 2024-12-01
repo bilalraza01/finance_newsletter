@@ -6,26 +6,43 @@ export const About = () => {
   return(
     <ContentPage heading="About Us">
       <Typography>
-        Hello Briefers!
+        <strong>Hello Trends Readers!</strong>
         <br /><br />
-        Traditional financial news & education has long been defined by Wall Street Suits - at Briefs Media, we’re ditching the suits, but leaving the Briefs.
+        Traditional financial education often feels outdated, focusing on what worked decades ago. At The Trends, we’re here to change that.
         <br /><br />
-        Briefs Media is a <strong>Detroit-based financial media company</strong> and the team behind <strong>Market Briefs, Briefs Academy and Market Briefs Pro</strong>.
+        We’re a modern financial platform that breaks down the latest in investing, digital currencies, fintech, and finance innovation—making it easy for anyone to take control of their financial future.
         <br /><br />
-        Market Briefs is our free daily newsletter built for regular investors! Our motto is that you should read less news, not more. We aim to provide you a brief summary of the financial news in 5 minutes or less Sunday through Friday.
+
+        <strong>Our Motto</strong>
         <br /><br />
-      </Typography>
-        <Box sx={{width: {xs: "350px", md: "500px", margin: "0 auto"}, maxWidth: "80%"}}>
-          <img style={{ display: "block", margin: "0 auto", maxWidth: "80%" }} width="80%" src="https://briefs.gumlet.io/wp-content/uploads/2023/11/Briefs-Media-About-Us.png" alt="Briefs Media" />
-        </Box>
-      <Typography>
-        Market Briefs Pro is our paid premium stock market research who want to stay ahead of market shifts. These newsletters will give you deep dives & analysis into important financial stories. Plus, our custom charts and graphs will help you feel what’s happening in the business and financial world and not just read about it.
+        We empower you with knowledge about modern finance so you can invest smarter, adapt faster, and make informed decisions in today’s evolving world.
         <br /><br />
-        Briefs Academy is our paid financial education platform. When you subscribe, you'll get access to multiple Journeys (what we call classes) on subjects including building wealth, real estate investing, stock market investing, and more! This is a one-stop-shop to accelerate your financial education.
+
+        <strong>The Trends Newsletter</strong>
         <br /><br />
-        Our team of Money Nerds at Briefs Media is dedicated to bringing you top financial news & education in the only way we know how: from the comfort of our briefs.
+        Our free bi-weekly newsletter focuses on the modern ways to grow and manage wealth, cutting through the noise to bring you insights on:
         <br /><br />
-        We want to share what we love. So put on your Briefs and read along with us.
+            • <strong>Modern Currencies:</strong> Explore the rise of digital currencies, from Bitcoin to stablecoins.
+        <br />
+            • <strong>Investing in the New Age:</strong> Learn about ETFs, sustainable investing, and emerging opportunities.
+        <br />
+            • <strong>Blockchain & Crypto Trends:</strong> Stay informed on the evolving landscape of crypto and blockchain technology.
+        <br />
+            • <strong>Fintech Innovations:</strong> Discover tools and apps transforming how we save, invest, and spend.
+        <br />
+            • <strong>Personal Finance Simplified:</strong> Master techniques for budgeting, saving, and growing your wealth.
+            <br /><br />
+
+        Whether you’re an experienced investor or just starting out, The Trends keeps you informed in under 5 minutes—so you can make better decisions without feeling overwhelmed.
+        <br /><br />
+
+        <strong>The Trends Team</strong>
+        <br /><br />
+
+        We’re a passionate group of finance enthusiasts and innovators. Our goal is to make modern finance accessible and engaging. From breaking down crypto trends to exploring cutting-edge investing strategies, we bring you the best of what’s next in finance.
+        <br /><br />
+
+        Subscribe to The Trends and join us as we simplify modern finance, help you grow your wealth, and keep you ahead of the curve—one trend at a time.
       </Typography>
     </ContentPage>
   )

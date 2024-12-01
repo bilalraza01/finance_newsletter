@@ -97,7 +97,7 @@ export const Footer = () => {
               marginBottom: "10px",
             }}
           >
-            About The Briefs
+            About The Trends
           </Typography>
           <Typography
             sx={{
@@ -108,7 +108,7 @@ export const Footer = () => {
               lineHeight: "1.5",
             }}
           >
-            Hello Briefers! Our Briefs are intended to keep you educated and entertained. Every morning, we break down the top news stories and deliver them to your inbox for free.
+            Welcome to The Trends—a newsletter designed to make modern finance easy to understand and actionable. Twice a week, we deliver expert-curated insights on the latest in finance and investing, right to your inbox.
           </Typography>
           <Box sx={{display: "flex", justifyContent: "left", width: "calc(100% - 20px)", marginTop: "15px"}}>
             <SocialIcon link="https://www.linkedin.com">
@@ -150,7 +150,7 @@ export const Footer = () => {
           marginTop: {xs: "20px", md: "50px"},
         }}
       >
-        Copyright © 2022 – 2024 Briefs Media, LLC All Rights Reserved.
+        Copyright © 2024 The Trends. All Rights Reserved.
       </Typography>
     </WrapperContainer>
   )
