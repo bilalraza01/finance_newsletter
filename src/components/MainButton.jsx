@@ -9,7 +9,7 @@ export const MainButton = ({text, onlcik}) => {
       onClick={onlcik}
       sx={{
         backgroundColor: theme.primary.main,
-        color: theme.common.white,
+        color: theme.common.black,
         boxShadow: "rgba(0,0,0,.5) 0 10px 20px -15px",
         borderRadius: "7px",
         padding: "17px 45px",

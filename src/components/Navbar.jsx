@@ -52,7 +52,7 @@ export const Navbar = () => {
               alignItems: "center",
             }}
           >
-            <Box><img src={logoImg} alt="logo" height="35px" /></Box>
+            <Box><img src={logoImg} alt="logo" height="50px" /></Box>
             <Typography
               sx={{
                 fontFamily: theme.typography.fontFamily,

@@ -258,9 +258,9 @@ const AdvertisingForm = () => {
           fontSize: "16px",
           backgroundColor: theme.primary.main,
           textTransform: "none",
-          color: "#fff",
+          color: theme.common.black,
           "&:hover": {
-            backgroundColor: "rgba(0, 106, 254, 0.8)",
+            backgroundColor: "rgba(232, 179, 11, 0.9)",
           },
         }}
       >

@@ -108,7 +108,9 @@ export const Footer = () => {
               lineHeight: "1.5",
             }}
           >
-            Welcome to The Trends—a newsletter designed to make modern finance easy to understand and actionable. Twice a week, we deliver expert-curated insights on the latest in finance and investing, right to your inbox.
+            Welcome to <b>The Trends</b>—a daily newsletter dedicated to helping you navigate the fast-evolving world of cryptocurrency and blockchain.
+            <br /><br />
+            Every morning, we deliver expert-curated insights, breaking down complex topics into actionable knowledge. Whether you're a trader, investor, or blockchain enthusiast, <b>The Trends</b> keeps you ahead of the curve.
           </Typography>
           <Box sx={{display: "flex", justifyContent: "left", width: "calc(100% - 20px)", marginTop: "15px"}}>
             <SocialIcon link="https://www.linkedin.com">

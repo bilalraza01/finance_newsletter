@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { CircularProgress, TextField, Button, Select, MenuItem, FormControl, InputLabel, Typography, Box, Divider, Grid, Alert } from '@mui/material';
 import axios from 'axios';
 import { Heading } from './ContentPage';
+import { useTheme } from "@mui/material";
 
 const ContactForm = () => {
+  const theme = useTheme();
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("success"); // Can be "success" or "error"
   const [isLoading, setIsLoading] = useState(false);
@@ -181,7 +183,25 @@ const ContactForm = () => {
             helperText={errors.message}
           />
         </Box>
-        <Button disabled={isLoading} type="submit" variant="contained" color="primary" fullWidth>
+        <Button
+          disabled={isLoading}
+          type="submit"
+          variant="contained"
+          color="primary"
+          sx={{
+            margin: "20px 0",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            fontSize: "16px",
+            backgroundColor: theme.primary.main,
+            textTransform: "none",
+            color: theme.common.black,
+            "&:hover": {
+              backgroundColor: "rgba(232, 179, 11, 0.9)",
+            },
+          }}
+          fullWidth
+        >
           {isLoading ? <CircularProgress size={24} sx={{ color: "white" }} /> : "Submit Form"}
         </Button>
       </form>

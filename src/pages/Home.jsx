@@ -51,7 +51,7 @@ export const Home = () => {
           <Grid item xs={12} md={6}>
             <Box sx={{width: {xs: "100%", md: "90%"}}}>
               <Heading
-                text="The Trends: Your guide to modern investing and finance"
+                text="The Trends: Liquidity moves where the trends go—it’s the law of the land."
                 sx={{
                   textAlign: "left",
                   fontSize: {xs: "28px", sm: "36px", md: "40px"},
@@ -59,7 +59,7 @@ export const Home = () => {
                 }}
               />
               <Heading
-                text="We simplify complex financial topics—sign up for The Trends today!"
+                text="Your daily guide to the world of cryptocurrency, blockchain, and decentralized finance."
                 sx={{
                   textAlign: "left",
                   fontSize: {xs: "18px", sm: "22px"},
@@ -109,13 +109,13 @@ export const Home = () => {
                     fontWeight: "700",
                     borderRadius: "7px",
                     letterSpacing: "1px",
-                    color: theme.common.white,
+                    color: theme.common.black,
                     backgroundColor: theme.primary.main,
                     lineHeight: "1.5",
                     transition: "none",
                     paddingY: {xs: "15px", md: "15px"},
                     "&:hover": {
-                      backgroundColor: "rgba(0, 106, 254, 0.9)",
+                      backgroundColor: "rgba(232, 179, 11, 0.9)",
                     }
                   }}
                 >
@@ -150,14 +150,14 @@ export const Home = () => {
       <WrapperContainer bgcolor={theme.primary.main} outerSx={{paddingY: "40px", position: "relative", zIndex: "5"}}>
         <Heading
           type="h2"
-          text="Stay Ahead, Stay Modern"
+          text="Stay Ahead in the Crypto Revolution"
           sx={{
             textAlign: "center",
             fontSize: {xs: "28px", sm: "36px", md: "44px"},
             lineHeight: "1.3",
             letterSpacing: "1px",
             paddingBottom: "20px !important",
-            color: theme.common.white,
+            color: theme.common.black,
           }}
         />
         <Typography
@@ -166,10 +166,10 @@ export const Home = () => {
             fontSize: {xs: "16px", sm: "20px"},
             fontWeight: "400",
             lineHeight: "1.5",
-            color: "rgba(255, 255, 255, 0.8)",
+            color: "rgba(0, 0, 0, 0.8)",
           }}
         >
-          Join thousands of readers who stay informed with The Trends, delivered twice a week. Get insights into modern investing, digital currencies, and emerging financial trends.
+          Join thousands of readers who get the latest updates on cryptocurrency, blockchain innovations, and emerging financial trends. Delivered daily to your inbox.
         </Typography>
       </WrapperContainer>
     </>

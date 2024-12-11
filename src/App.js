@@ -19,7 +19,7 @@ const theme = createTheme({
     "white": "#fff"
   },
   "primary": {
-    "main": "#006afe",
+    "main": "#E8B30B",
     "light": "#f9f9f9",
     "link": "#686868",
     "heading": "#0f0f0f",
