@@ -113,15 +113,15 @@ export const Footer = () => {
             Every morning, we deliver expert-curated insights, breaking down complex topics into actionable knowledge. Whether you're a trader, investor, or blockchain enthusiast, <b>The Trends</b> keeps you ahead of the curve.
           </Typography>
           <Box sx={{display: "flex", justifyContent: "left", width: "calc(100% - 20px)", marginTop: "15px"}}>
-            <SocialIcon link="https://www.linkedin.com">
+            <SocialIcon link="https://www.linkedin.com/in/mtayyabcpa/">
               <LinkedinIcon width='15px' fill='#FFF' />
             </SocialIcon>
 
-            <SocialIcon link="https://www.instagram.com">
+            {/* <SocialIcon link="https://www.instagram.com">
               <InstagramIcon width='15px' fill='#FFF' />
-            </SocialIcon>
+            </SocialIcon> */}
 
-            <SocialIcon link="https://www.twitter.com">
+            <SocialIcon link="https://x.com/16TayyabM">
               <TwitterIcon width='15px' fill='#FFF' />
             </SocialIcon>
           </Box>

@@ -4,6 +4,7 @@ import { fontWeight, letterSpacing, lineHeight, padding, textAlign, useTheme } f
 import { Heading } from '../components/ContentPage';
 import axios from 'axios';
 import { Grid, Box, Input, Button, Typography, Alert, CircularProgress } from '@mui/material';
+import trendsHome from '../assets/images/trends_home.png';
 
 export const Home = () => {
   const theme = useTheme();
@@ -93,7 +94,7 @@ export const Home = () => {
                     borderRadius: "7px",
                     padding: "10px",
                     border: "none",
-                    color: theme.primary.main,
+                    color: theme.common.black,
                     outline: "none",
                   }}
                 />
@@ -141,7 +142,7 @@ export const Home = () => {
                   bottom: "0",
                 }}
                 alt='The Trends'
-                src="https://briefs.gumlet.io/wp-content/uploads/2022/01/MarketBriefs-Email.png?compress=true&quality=80&w=576&dpr=1" width="100%"
+                src={trendsHome} width="100%"
               />
             </Box>
           </Grid>

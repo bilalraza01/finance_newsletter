@@ -145,8 +145,8 @@ const ContactForm = () => {
               onChange={handleChange}
             >
               <MenuItem value="">- Select -</MenuItem>
-              <MenuItem value="Need support with your Briefs?">
-                Need support with your Briefs?
+              <MenuItem value="Need support?">
+                Need support?
               </MenuItem>
               <MenuItem value="Media Inquiry?">Media Inquiry?</MenuItem>
               <MenuItem value="Want to talk about something else?">
