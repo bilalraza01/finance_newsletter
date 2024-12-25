@@ -4,7 +4,7 @@ import { fontWeight, letterSpacing, lineHeight, padding, textAlign, useTheme } f
 import { Heading } from '../components/ContentPage';
 import axios from 'axios';
 import { Grid, Box, Input, Button, Typography, Alert, CircularProgress } from '@mui/material';
-import trendsHome from '../assets/images/trends_home.png';
+import trendsHome from '../assets/images/trends_home.jpeg';
 
 export const Home = () => {
   const theme = useTheme();
@@ -24,19 +24,21 @@ export const Home = () => {
       return;
     }
     try {
-      const response = await axios.post(
-        `https://app.kit.com/forms/7421354/subscriptions`,
-        {email_address: email},
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded", // Ensure the data is sent correctly
-          },
-        }
-      );
-      if (response.status === 200) {
-        setMessage("You have successfully subscribed to the Trends!");
-        setMessageType("success");
-      }
+      console.log("email: ", email);
+      console.log("time: ", new Date().getTime());
+      // const response = await axios.post(
+      //   `https://app.kit.com/forms/7421354/subscriptions`,
+      //   {email_address: email},
+      //   {
+      //     headers: {
+      //       "Content-Type": "application/x-www-form-urlencoded", // Ensure the data is sent correctly
+      //     },
+      //   }
+      // );
+      // if (response.status === 200) {
+      //   setMessage("You have successfully subscribed to the Trends!");
+      //   setMessageType("success");
+      // }
     } catch (error) {
       setMessage("Error subscribing. Please try again later.");
       setMessageType("error");
@@ -52,7 +54,7 @@ export const Home = () => {
           <Grid item xs={12} md={6}>
             <Box sx={{width: {xs: "100%", md: "90%"}}}>
               <Heading
-                text="The Trends: Liquidity moves where the trends go—it’s the law of the land."
+                text="The Trends: Your Free Finance NewsLetter to modern investing and finance"
                 sx={{
                   textAlign: "left",
                   fontSize: {xs: "28px", sm: "36px", md: "40px"},
@@ -60,7 +62,7 @@ export const Home = () => {
                 }}
               />
               <Heading
-                text="Your daily guide to the world of cryptocurrency, blockchain, and decentralized finance."
+                text="We simplify complex financial topics—sign up for The Trends today!"
                 sx={{
                   textAlign: "left",
                   fontSize: {xs: "18px", sm: "22px"},
@@ -151,7 +153,7 @@ export const Home = () => {
       <WrapperContainer bgcolor={theme.primary.main} outerSx={{paddingY: "40px", position: "relative", zIndex: "5"}}>
         <Heading
           type="h2"
-          text="Stay Ahead in the Crypto Revolution"
+          text="Stay Ahead, Stay Modern"
           sx={{
             textAlign: "center",
             fontSize: {xs: "28px", sm: "36px", md: "44px"},
@@ -170,7 +172,7 @@ export const Home = () => {
             color: "rgba(0, 0, 0, 0.8)",
           }}
         >
-          Join thousands of readers who get the latest updates on cryptocurrency, blockchain innovations, and emerging financial trends. Delivered daily to your inbox.
+          Join thousands of readers who stay informed with The Trends, delivered Every Wednesday. Get insights into modern investing, digital currencies, and emerging financial trends.
         </Typography>
       </WrapperContainer>
     </>
