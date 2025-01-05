@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { WrapperContainer } from '../components/WrapperContainer';
-import { fontWeight, letterSpacing, lineHeight, padding, textAlign, useTheme } from '@mui/system';
+import { fontWeight, letterSpacing, lineHeight, margin, padding, textAlign, useTheme } from '@mui/system';
 import { Heading } from '../components/ContentPage';
 import axios from 'axios';
 import { Grid, Box, Input, Button, Typography, Alert, CircularProgress } from '@mui/material';
-import trendsHome from '../assets/images/trends_home.jpeg';
+import trendsHome from '../assets/images/trends_home_f.png';
 
 export const Home = () => {
   const theme = useTheme();
@@ -49,7 +49,7 @@ export const Home = () => {
 
   return(
     <>
-      <WrapperContainer bgcolor={theme.primary.light} outerSx={{paddingTop: "80px"}}>
+      <WrapperContainer bgcolor={theme.primary.light} outerSx={{paddingTop: {xs: "30px", sm: "80px"}}}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Box sx={{width: {xs: "100%", md: "90%"}}}>
@@ -57,8 +57,10 @@ export const Home = () => {
                 text="The Trends: Your Free Finance NewsLetter to modern investing and finance"
                 sx={{
                   textAlign: "left",
+                  fontWeight: {xs: "800", md: "700"},
                   fontSize: {xs: "28px", sm: "36px", md: "40px"},
                   lineHeight: "1.3",
+                  paddingBottom: {xs: "15px", md: "30px"},
                 }}
               />
               <Heading
@@ -68,6 +70,7 @@ export const Home = () => {
                   fontSize: {xs: "18px", sm: "22px"},
                   fontWeight: "400",
                   lineHeight: "1.5",
+                  paddingBottom: {xs: "8px", md: "30px"},
                 }}
               />
               {message && <Alert severity={messageType} sx={{marginBottom: "20px"}}>{message}</Alert>}
@@ -80,7 +83,7 @@ export const Home = () => {
                   display: "flex",
                   justifyContent: "space-between",
                   flexDirection: {xs: "column", md: "row"},
-                  marginBottom: "20px",
+                  marginBottom: {xs: "10px", md: "20px"},
                   border: {xs: "none", md: `3px solid ${theme.primary.main}`},
                 }}
               >
@@ -132,7 +135,7 @@ export const Home = () => {
               sx={{
                 width: {xs: "350px", md: "340px"},
                 maxWidth: "80%",
-                minHeight: "400px",
+                minHeight: "320px",
                 position: "relative",
               }}
             >
@@ -150,7 +153,7 @@ export const Home = () => {
           </Grid>
         </Grid>
       </WrapperContainer>
-      <WrapperContainer bgcolor={theme.primary.main} outerSx={{paddingY: "40px", position: "relative", zIndex: "5"}}>
+      <WrapperContainer bgcolor={theme.primary.main} outerSx={{paddingY: {xs: "20px", md: "40px"}, position: "relative", zIndex: "5"}}>
         <Heading
           type="h2"
           text="Stay Ahead, Stay Modern"

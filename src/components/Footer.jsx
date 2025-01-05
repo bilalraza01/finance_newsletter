@@ -82,7 +82,7 @@ export const Footer = () => {
     <WrapperContainer
       bgcolor={theme.common.white}
       innerSx={{
-        padding: "50px 20px",
+        padding: {xs: "20px 20px", md: "50px 20px"},
       }}
     >
       <Grid container spacing={1}>
