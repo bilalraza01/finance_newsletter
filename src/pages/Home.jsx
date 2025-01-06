@@ -54,7 +54,7 @@ export const Home = () => {
           <Grid item xs={12} md={6}>
             <Box sx={{width: {xs: "100%", md: "90%"}}}>
               <Heading
-                text="The Trends: Your Free Finance NewsLetter to modern investing and finance"
+                text="The Trends: How Businesses Do Business—One Trend at a Time."
                 sx={{
                   textAlign: "left",
                   fontWeight: {xs: "800", md: "700"},
@@ -64,7 +64,7 @@ export const Home = () => {
                 }}
               />
               <Heading
-                text="We simplify complex financial topics—sign up for The Trends today!"
+                text="We break down complex strategies and trends—join The Trends today!"
                 sx={{
                   textAlign: "left",
                   fontSize: {xs: "18px", sm: "22px"},
@@ -156,26 +156,26 @@ export const Home = () => {
       <WrapperContainer bgcolor={theme.primary.main} outerSx={{paddingY: {xs: "20px", md: "40px"}, position: "relative", zIndex: "5"}}>
         <Heading
           type="h2"
-          text="Stay Ahead, Stay Modern"
+          text="Stay Curious, Stay Ahead"
           sx={{
             textAlign: "center",
-            fontSize: {xs: "28px", sm: "36px", md: "44px"},
+            fontSize: {xs: "22px", sm: "36px", md: "44px"},
             lineHeight: "1.3",
             letterSpacing: "1px",
-            paddingBottom: "20px !important",
+            paddingBottom: {xs: "10px !important", md: "20px !important"},
             color: theme.common.black,
           }}
         />
         <Typography
           sx={{
             textAlign: "center",
-            fontSize: {xs: "16px", sm: "20px"},
+            fontSize: {xs: "15px", sm: "20px"},
             fontWeight: "400",
             lineHeight: "1.5",
             color: "rgba(0, 0, 0, 0.8)",
           }}
         >
-          Join thousands of readers who stay informed with The Trends, delivered Every Wednesday. Get insights into modern investing, digital currencies, and emerging financial trends.
+          Join thousands of readers who explore how businesses grow, innovate, and create value. Delivered every Wednesday, The Trends brings you actionable insights into lead generation, business strategies, and the latest market trends.
         </Typography>
       </WrapperContainer>
     </>

@@ -17,7 +17,7 @@ export const Advertise = () => {
           margin: "0 auto 30px",
         }}
       >
-        We’re excited about the opportunity to collaborate! If your brand aligns with the world of modern finance, investing, or innovation, fill out the form below. A member of The Trends team will get back to you shortly.
+        If your brand aligns with the world of business strategies, lead generation, or innovation, fill out the form below. A member of The Trends team will be in touch with you soon.
       </Typography>
       <AdvertisingForm />
     </WrapperContainer>
