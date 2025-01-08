@@ -54,7 +54,17 @@ export const Home = () => {
           <Grid item xs={12} md={6}>
             <Box sx={{width: {xs: "100%", md: "90%"}}}>
               <Heading
-                text="How Businesses Do Business One Trend at a Time."
+                text="How Businesses Do Business."
+                sx={{
+                  textAlign: "left",
+                  fontWeight: {xs: "800", md: "700"},
+                  fontSize: {xs: "28px", sm: "36px", md: "40px"},
+                  lineHeight: "1.3",
+                  paddingBottom: "0px",
+                }}
+              />
+              <Heading
+                text="One Trend at a Time."
                 sx={{
                   textAlign: "left",
                   fontWeight: {xs: "800", md: "700"},
