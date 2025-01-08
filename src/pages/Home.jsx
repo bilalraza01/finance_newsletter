@@ -4,7 +4,7 @@ import { fontWeight, letterSpacing, lineHeight, margin, padding, textAlign, useT
 import { Heading } from '../components/ContentPage';
 import axios from 'axios';
 import { Grid, Box, Input, Button, Typography, Alert, CircularProgress } from '@mui/material';
-import trendsHome from '../assets/images/trends_home_f.png';
+import trendsHome from '../assets/images/home_img.png';
 
 export const Home = () => {
   const theme = useTheme();
@@ -54,7 +54,7 @@ export const Home = () => {
           <Grid item xs={12} md={6}>
             <Box sx={{width: {xs: "100%", md: "90%"}}}>
               <Heading
-                text="The Trends: How Businesses Do Business—One Trend at a Time."
+                text="How Businesses Do Business One Trend at a Time."
                 sx={{
                   textAlign: "left",
                   fontWeight: {xs: "800", md: "700"},
