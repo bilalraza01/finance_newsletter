@@ -54,17 +54,7 @@ export const Home = () => {
           <Grid item xs={12} md={6}>
             <Box sx={{width: {xs: "100%", md: "90%"}}}>
               <Heading
-                text="How Businesses Do Business."
-                sx={{
-                  textAlign: "left",
-                  fontWeight: {xs: "800", md: "700"},
-                  fontSize: {xs: "28px", sm: "36px", md: "40px"},
-                  lineHeight: "1.3",
-                  paddingBottom: "0px",
-                }}
-              />
-              <Heading
-                text="One Trend at a Time."
+                text="Insights on Business, AI & Latest Market Trends."
                 sx={{
                   textAlign: "left",
                   fontWeight: {xs: "800", md: "700"},
@@ -185,7 +175,7 @@ export const Home = () => {
             color: "rgba(0, 0, 0, 0.8)",
           }}
         >
-          Join thousands of readers who explore how businesses grow, innovate, and create value. Delivered every Wednesday, The Trends brings you actionable insights into lead generation, business strategies, and the latest market trends.
+          Join thousands of readers who explore how businesses grow, innovate, and create value. The Trends brings you actionable insights into lead generation, business strategies, and the latest market trends.
         </Typography>
       </WrapperContainer>
     </>

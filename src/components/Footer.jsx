@@ -108,7 +108,7 @@ export const Footer = () => {
               lineHeight: "1.5",
             }}
           >
-            Welcome to The Trends—a platform where we explore how businesses do business. Every Wednesday, we dive into one trend or case study, simplifying strategies, processes, and systems that drive success in the modern business world.
+            Welcome to The Trends—a platform where we explore how businesses do business. We dive into one trend or case study, simplifying strategies, processes, and systems that drive success in the modern business world.
           </Typography>
           <Box sx={{display: "flex", justifyContent: "left", width: "calc(100% - 20px)", marginTop: "15px"}}>
             <SocialIcon link="https://www.linkedin.com/in/mtayyabcpa/">
